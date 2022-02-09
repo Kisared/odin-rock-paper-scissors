@@ -20,3 +20,20 @@ function playRound(playerSelection, computerSelection) {
         return 'You lose! Rock beats Scissors.';
     } else return 'An error has ocurred';
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+
+    }
+}
+
+function addPoints(playRound) {
+    if (playRound.slice(0, 7) === 'You win') {
+        return userPoints++;
+    } else if (playRound.slice(0, 7) === 'You lose') {
+        return computerPoints++;
+    } else return;
+}
+
+let userPoints = 0;
+let computerPoints = 0;
