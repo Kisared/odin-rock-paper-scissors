@@ -43,7 +43,7 @@ function game() {
 function addPoints(result) {
     if (result.slice(0, 7) === 'You win') {
         return userPoints++;
-    } else if (result.slice(0, 7) === 'You lose') {
+    } else if (result.slice(0, 8) === 'You lose') {
         return computerPoints++;
     } else return;
 }
