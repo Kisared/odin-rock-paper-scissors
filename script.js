@@ -23,14 +23,27 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-
+        let playerSelection = String(prompt('Rock, paper or scissors?')).toLowerCase();
+        let computerSelection = computerPlay();
+        console.log(`You selected ${playerSelection} and the computer selected ${computerSelection}.`)
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        addPoints(result);        
     }
+
+    console.log(`You made ${userPoints} points and the computer made ${computerPoints}.`)
+
+    if (userPoints > computerPoints) {
+        return 'You\'ve won! Congratulations';
+    } else if (userPoints < computerPoints) {
+        return 'You\'ve lost! Better luck next time';
+    } else return 'It\'s a draw';
 }
 
-function addPoints(playRound) {
-    if (playRound.slice(0, 7) === 'You win') {
+function addPoints(result) {
+    if (result.slice(0, 7) === 'You win') {
         return userPoints++;
-    } else if (playRound.slice(0, 7) === 'You lose') {
+    } else if (result.slice(0, 7) === 'You lose') {
         return computerPoints++;
     } else return;
 }
