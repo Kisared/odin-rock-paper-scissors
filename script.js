@@ -24,11 +24,22 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = String(prompt('Rock, paper or scissors?')).toLowerCase();
-        let computerSelection = computerPlay();
-        console.log(`You selected ${playerSelection} and the computer selected ${computerSelection}.`)
-        let result = playRound(playerSelection, computerSelection);
-        console.log(result);
-        addPoints(result);        
+        let verification = verifyPlayerSelection(playerSelection);
+        if (verification === false) {
+            playerSelection = askUserSelection(verification);
+            let computerSelection = computerPlay();
+            console.log(`You selected ${playerSelection} and the computer selected ${computerSelection}.`)
+            let result = playRound(playerSelection, computerSelection);
+            console.log(result);
+            addPoints(result);
+        } else {
+            let computerSelection = computerPlay();
+            console.log(`You selected ${playerSelection} and the computer selected ${computerSelection}.`)
+            let result = playRound(playerSelection, computerSelection);
+            console.log(result);
+            addPoints(result);        
+        }
+        
     }
 
     console.log(`You made ${userPoints} points and the computer made ${computerPoints}.`)
@@ -56,10 +67,10 @@ function verifyPlayerSelection(playerSelection) {
 function askUserSelection(verification) {
     while (verification === false) {
         console.log('Incorrect selection, please try again using "rock", "paper" or "scissors"');
-        let playerSelection = String(prompt('Rock, paper or scissors?')).toLowerCase();
+        playerSelection = String(prompt('Rock, paper or scissors?')).toLowerCase();
         verification = verifyPlayerSelection(playerSelection);
     }
-    return verification;
+    return playerSelection;
 }
 
 let userPoints = 0;
