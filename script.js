@@ -73,5 +73,18 @@ function askUserSelection(verification) {
     return playerSelection;
 }
 
+function gameSelection() {
+    playSelection =  prompt('Do you want to play Rock Paper Scissors? (introduce "yes" or "no") ');
+    return playSelection;
+}
+
 let userPoints = 0;
 let computerPoints = 0;
+
+playSelection = gameSelection();
+
+while (playSelection === 'yes') {
+    gameResult = game();
+    console.log(gameResult);
+    playSelection = gameSelection();
+}
