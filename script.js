@@ -48,5 +48,9 @@ function addPoints(result) {
     } else return;
 }
 
+function verifyPlayerSelection(playerSelection) {
+    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') return true;
+    else return false;
+}
 let userPoints = 0;
 let computerPoints = 0;
