@@ -1,22 +1,22 @@
 function computerPlay() {
-    options = ['Rock', 'Paper', 'Scissors'];
+    options = ['rock', 'paper', 'scissors'];
     return options[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return `It\'s a draw. ${playerSelection} against ${computerSelection} is equal.`
-    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         return 'You win! Scissors beats Paper.';
-    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         return 'You win! Paper beats Rock.';
-    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         return 'You win! Rock beats Scissors.';
-    } else if (computerSelection === 'Scissors' && playerSelection === 'Paper') {
+    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
         return 'You lose! Scissors beats Paper.';
-    } else if (computerSelection === 'Paper' && playerSelection === 'Rock') {
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
         return 'You lose! Paper beats Rock.';
-    } else if (computerSelection === 'Rock' && playerSelection === 'Scissors') {
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
         return 'You lose! Rock beats Scissors.';
     } else return 'An error has ocurred';
 }
