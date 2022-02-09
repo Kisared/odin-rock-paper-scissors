@@ -52,5 +52,15 @@ function verifyPlayerSelection(playerSelection) {
     if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') return true;
     else return false;
 }
+
+function askUserSelection(verification) {
+    while (verification === false) {
+        console.log('Incorrect selection, please try again using "rock", "paper" or "scissors"');
+        let playerSelection = String(prompt('Rock, paper or scissors?')).toLowerCase();
+        verification = verifyPlayerSelection(playerSelection);
+    }
+    return verification;
+}
+
 let userPoints = 0;
 let computerPoints = 0;
