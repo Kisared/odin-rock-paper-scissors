@@ -88,3 +88,11 @@ while (playSelection === 'yes') {
     console.log(gameResult);
     playSelection = gameSelection();
 }
+
+const rockButton = document.querySelector('rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
+rockButton.addEventListener('click', playRound('rock', computerPlay));
+paperButton.addEventListener('click', playRound('paper', computerPlay));
+scissorsButton.addEventListener('click', playRound('scissors', computerPlay))
