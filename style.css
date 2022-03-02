@@ -1,20 +1,24 @@
 .header {
-    background-color: #190061;
+    background-color: #000000;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75px;
+    width: -webkit-fill-available;
+    position: revert;
 }
 
 .content {
     display: flex;
-    background-color: #282828;
+    background-color: #c5acdd;
     flex-direction: column;
     flex-grow: 2;
     height: max-content;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 75px;
+    gap: 75px;
 }
 
 body {
@@ -27,27 +31,86 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 100px;
 }
 
 .footer {
+    display: flex;
     height: 75px;
-    background-color: #0C0032;
+    background-color: #000000;
+    position: static;
+    width: -webkit-fill-available;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
     height: 875px;
+    background-color: #c5acdd;
 }
 
 .button {
     transition: width 3s, height 3s; 
+    border-radius: 50%;
+    box-shadow: 12px 12px black;
 }
 
 .button:hover {
     width: 350px;
     height: 350px;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #be5fdb;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-size: xx-large;
+}
+
+.playButton {
+    height: 200px;
+    width: 300px;
+    border-style: solid;
+    border-color: skyblue;
+    background-color: teal;
+    border-radius: 25px;
+    font-size: 75px;
+    transition: width 3s height 3s font-size 3s;
+    border-width: thick;
+    box-shadow: 12px 12px black;
+}
+
+.playButton:hover {
+    width: 320px;
+    height: 220px;
+    font-size: 95px;
+    background-color: skyblue;
+    border-color: purple;
+}
+
+.rockButton, 
+.paperButton,
+.scissorsButton {
+position: relative
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgreen;
+    border-style: solid;
+    border-width: 23px;
+    height: 100px;
+    width: 250px;
+    color: black;
+    font-size: larger;
+    position: absolute;
+    bottom: 120px;
 }
